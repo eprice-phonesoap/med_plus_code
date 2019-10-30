@@ -1,0 +1,154 @@
+/**
+@file			  UVCleaningApp.c
+@author			  JGS
+@brief			  UV Cleaning Application related functions definitions
+
+*/
+
+
+//_____I N C L U D E ________________________________________________________
+// Place here all includes needed by this file starting with its own header
+// showing the reason of the include.
+#include "UVCleaningApp.h"
+#include "MotorControl.h"
+#include "LedControl.h"
+#include "LampControl.h"
+#include "ProximitySense.h"
+#include "OledDisplayManager.h"
+
+//_____D E F I N E __________________________________________________________
+// local private defines, enums, macros
+#define CLEANING_TIME_UP_TO_NEAR_COMPLETION	(2500) // = 25sec
+#define CLEANING_TIME_UP_TO_COMPLETION 		(3000) // = 30sec
+#define DEFAULT_CLEANING_TIME_SECONDS				(30)
+
+//_____ T Y P E D E F _______________________________________________________
+// local private typedefs, structs, unions
+
+
+//_____ P R O T O T Y P E S _________________________________________________
+// local function declarations
+
+//_____ L O C A L  D A T A __________________________________________________
+// local private data (static)
+static int timecounter=0;
+
+UVC_MODES uvc_mode = UVC_MODE_IDLE;
+UVC_EVENTS uvc_event = UVC_EVENT_NONE;
+uint16_t  cleaningTime;
+uint8_t activeCleaning;//Is it actively cleaning a device? boolean
+//_____ P U B L I C   F U N C T I O N S _____________________________________
+// public interface functions
+
+
+/**
+  @brief            UvC_Init
+  @details          Initialize UV Cleaning Application module
+  @param[in]        None
+  @param[out]       None
+  @param[in,out]    None
+  @retval  type     None
+*/
+ void UvC_Init(void)
+ {
+	 cleaningTime = DEFAULT_CLEANING_TIME_SECONDS;
+	 activeCleaning = 0;
+ }
+
+ uint8_t IsCleaning(void)
+ {
+	 return activeCleaning;
+ }
+
+
+ /**
+   @brief            UvC_10msTask
+   @details          Periodic 10ms Task to be called by scheduler
+   @param[in]        None
+   @param[out]       None
+   @param[in,out]    None
+   @retval  type     None
+ */
+  void UvC_10msTask(void)
+  {
+	  switch(uvc_mode)
+	  {
+	  	  case UVC_MODE_IDLE:
+	  		  if(uvc_event == UVC_EVENT_CLEAN_START)
+	  		  {
+	  			  if(MotorCtrl_isCompletelyClosed() == TRUE)
+	  			  {
+					LedCtrl_SetMode(LEDCTRL_EVENT_CLEANING_IN_PROGRESS);
+					activeCleaning = 1;
+					LampCtrl_TurnON();
+					uvc_mode = UVC_MODE_CLEANING;
+					uvc_event = UVC_EVENT_NONE;
+					timecounter= 0;
+	  			  }
+	  			  else
+	  			  {
+	  				LedCtrl_SetMode(LEDCTRL_EVENT_CLEANING_ABORTED);
+	  			  }
+
+	  		  }
+	  		  break;
+	  	  case UVC_MODE_CLEANING:
+
+	  		  OLD_SetCount(cleaningTime-(timecounter/100));
+
+	  		  timecounter++;
+	  		  if(timecounter == CLEANING_TIME_UP_TO_NEAR_COMPLETION)
+	  		  {
+	  			LedCtrl_SetMode(LEDCTRL_EVENT_CLEANING_NEARING_COMPLETION);
+	  		  }
+	  		  else if(timecounter >= CLEANING_TIME_UP_TO_COMPLETION)
+			  {
+	  			LedCtrl_SetMode(LEDCTRL_EVENT_CLEANING_COMPLETE);
+	  			uvc_event = UVC_EVENT_CLEAN_STOP;
+			  }
+
+	  		  if(MotorCtrl_isCompletelyClosed() == FALSE)
+	  		  {
+	  			LedCtrl_SetMode(LEDCTRL_EVENT_CLEANING_ABORTED);
+	  			uvc_event = UVC_EVENT_CLEAN_STOP;
+	  		  }
+
+	  		  if(uvc_event == UVC_EVENT_CLEAN_STOP)
+			  {
+	  			activeCleaning = 0;
+	  			LampCtrl_TurnOFF();
+	  			//MotorCtrl_SetEvent(MTRCTRL_EVENT_OPEN);
+	  			OLM_SetEvent(OLM_EVENT_DISP_OPENING);
+	  			uvc_mode = UVC_MODE_IDLE;
+				uvc_event = UVC_EVENT_NONE;
+			  }
+	  		  break;
+	  	  default:
+	  		  break;
+
+	  }
+  }
+
+  void UvC_1sTasks(void)
+  {
+
+
+  }
+
+
+void MtrCtrl_Event(MTRCTRL_BCAST_EVENTS mtrctrl_event)
+{
+	if(mtrctrl_event == MTRCTRL_BCAST_EVENT_DOOR_CLOSED)
+	{
+		uvc_event = UVC_EVENT_CLEAN_START;
+	}
+	else if(mtrctrl_event == MTRCTRL_BCAST_EVENT_OPENING_INIT)
+	{
+		uvc_event = UVC_EVENT_CLEAN_STOP;
+		LampCtrl_TurnOFF();
+	}
+}
+
+
+ //_____ L O C A L  F U N C T I O N S ________________________________________
+ // local interface functions

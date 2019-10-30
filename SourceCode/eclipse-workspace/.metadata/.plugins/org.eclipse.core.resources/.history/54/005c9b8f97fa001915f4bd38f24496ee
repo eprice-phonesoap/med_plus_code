@@ -1,0 +1,346 @@
+/**
+@file			  AnalogSensorManagement.c
+@author			  JGS
+@brief			  Analog Sensor Management module related functions definitions
+*/
+
+
+//_____I N C L U D E ________________________________________________________
+// Place here all includes needed by this file starting with its own header
+// showing the reason of the include.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "soc/rtc_io_reg.h"
+#include "esp_system.h"
+#include "nvs_flash.h"
+#include "driver/gpio.h"
+
+#include "esp_log.h"
+//#include "blufi_demo.h"
+
+#include "AnalogSensorManagement.h"
+#include "AnalogSensorMultiplexerControl.h"
+
+#define TAG "ASM"
+//_____D E F I N E __________________________________________________________
+// local private defines, enums, macros
+enum adc1_pad {
+    ADC1_GPIO36 = 0,
+    ADC1_GPIO37,
+    ADC1_GPIO38,
+    ADC1_GPIO39,
+    ADC1_GPIO32,
+    ADC1_GPIO33,
+    ADC1_GPIO34,
+    ADC1_GPIO35
+};
+
+enum adc2_pad {
+    ADC2_GPIO4 = 0,
+    ADC2_GPIO0,
+    ADC2_GPIO2,
+    ADC2_GPIO15,
+    ADC2_GPIO13,
+    ADC2_GPIO12,
+    ADC2_GPIO14,
+    ADC2_GPIO27,
+    ADC2_GPIO25,
+    ADC2_GPIO26
+};
+
+enum adc_atten {
+    ADC_ATTEN_0DB = 0,     /* 0 ~ 1V can be measured */
+    ADC_ATTEN_3DB,         /* 0 ~ 1.4V can be measured */
+    ADC_ATTEN_6DB,         /* 0 ~ 2V can be measured */
+    ADC_ATTEN_12DB         /* 0 ~ 4V can be measured */
+};
+
+/* Range of the return value is [0, 4096] */
+uint32_t adc1_read(enum adc1_pad pad, enum adc_atten att);
+uint32_t adc2_read(enum adc1_pad pad, enum adc_atten att);
+
+/*
+ * Read the amp adc, IO36 as the ADC_PRE_AMP
+ * make sure connecting a 270pF cap from
+ * esp32_pin5 to esp32_pin6
+ */
+uint32_t adc1_amp_read();
+
+#define ASM_CLEAN_TIME_CHANNEL		ADC2_GPIO2//GPIO_NUM_2
+#define ASM_DOOR_TIME_CHANNEL		ADC2_GPIO4//GPIO_NUM_4
+#define ASM_UVC_MUX1_CHANNEL		ADC2_GPIO25//GPIO_NUM_25
+#define ASM_UVC_MUX2_CHANNEL		ADC2_GPIO26//GPIO_NUM_26
+#define ASM_TEMP_CHANNEL			ADC1_GPIO35
+#define ASM_TEMP_AVG_NUM			10
+#define TEMP_LOW_VAL				2600
+#define TEMP_HIGH_VAL				2900
+
+//_____ T Y P E D E F _______________________________________________________
+// local private typedefs, structs, unions
+
+
+//_____ P R O T O T Y P E S _________________________________________________
+// local function declarations
+
+//_____ L O C A L  D A T A __________________________________________________
+// local private data (static)
+uint8 AsM_ControlState=0;
+
+uint16 asm_CleanTime=0;
+uint16 asm_DoorTime=0;
+uint32 asm_tempValue=0;
+uint32 asm_finalValue=0;
+uint16 asm_UVC_Current[16]= {0};
+uint16 asm_temp_hyst = 0;
+uint16 asm_temp_avg[ASM_TEMP_AVG_NUM] = {0};
+uint16 asm_avg_counter = 0;
+
+
+typedef enum
+{
+	ASM_READ_CLEAN_TIME_KNOB = 0,
+	ASM_READ_DOOR_TIME_KNOB,
+	ASM_READ_UV1_CURRENT,
+	ASM_READ_UV2_CURRENT,
+	ASM_READ_UV3_CURRENT,
+	ASM_READ_UV4_CURRENT,
+	ASM_READ_UV5_CURRENT,
+	ASM_READ_UV6_CURRENT,
+	ASM_READ_UV7_CURRENT,
+	ASM_READ_UV8_CURRENT,
+	ASM_READ_UV9_CURRENT,
+	ASM_READ_UV10_CURRENT,
+	ASM_READ_UV11_CURRENT,
+	ASM_READ_UV12_CURRENT,
+	ASM_READ_UV13_CURRENT,
+	ASM_READ_UV14_CURRENT,
+	ASM_READ_UV15_CURRENT,
+	ASM_READ_UV16_CURRENT,
+	ASM_MAX_STATES,
+}ASM_States_t;
+
+//_____ P U B L I C   F U N C T I O N S _____________________________________
+// public interface functions
+
+
+/**
+  @brief            AsM_Init
+  @details          Initialize Analog Sensor Management module
+  @param[in]        None
+  @param[out]       None
+  @param[in,out]    None
+  @retval  type     None
+*/
+ void AsM_Init(void)
+ {
+
+	 AsM_ControlState = ASM_READ_CLEAN_TIME_KNOB;
+	 ASMC_Init();
+ }
+
+ /**
+   @brief            AsM_GetDoorTime
+   @details          Get Door Time
+   @param[in]        None
+   @param[out]       None
+   @param[in,out]    None
+   @retval  type     Rfaw ADC Value
+ */
+ uint16 AsM_GetDoorTime(void)
+ {
+	 return asm_DoorTime;
+ }
+
+
+/**
+@brief            AsM_GetCleanTime
+@details          Get Clean Time
+@param[in]        None
+@param[out]       None
+@param[in,out]    None
+@retval  type     Rfaw ADC Value
+*/
+uint16 AsM_GetCleanTime(void)
+{
+ return asm_CleanTime;
+}
+
+
+ /**
+   @brief            AsM_GetUVC_Current
+   @details          Get UVC Current
+   @param[in]        None
+   @param[out]       None
+   @param[in,out]    None
+   @retval  type     Raw ADC Value
+ */
+ uint16 AsM_GetUVC_Current(uint8 channel)
+ {
+	 return asm_UVC_Current[channel];
+ }
+
+ /**
+   @brief            AsM_10msTask
+   @details          Periodic 10ms task to be called by Scheduler
+   @param[in]        None
+   @param[out]       None
+   @param[in,out]    None
+   @retval  type     None
+ */
+ void AsM_10msTask(void)
+ {
+	 int i;
+
+	 switch(AsM_ControlState)
+	 {
+		 case ASM_READ_CLEAN_TIME_KNOB:
+
+			 asm_tempValue = adc1_read(ASM_TEMP_CHANNEL, ADC_ATTEN_0DB);
+//			 asm_temp_avg[asm_avg_counter] = asm_tempValue;
+//			 asm_avg_counter++;
+//			 asm_tempValue = 0;
+//
+//			 if(asm_avg_counter < ASM_TEMP_AVG_NUM)
+//			 {
+//				 asm_avg_counter = 0;
+//			 }
+//
+//			 for(i = 0;i < ASM_TEMP_AVG_NUM;i++)
+//			 {
+//				 asm_tempValue = asm_tempValue + asm_temp_avg[i];
+//			 }
+//
+//			 asm_finalValue = asm_tempValue/ASM_TEMP_AVG_NUM;
+
+			 break;
+		 case ASM_READ_DOOR_TIME_KNOB:
+			 asm_DoorTime = adc2_read(ASM_DOOR_TIME_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_8);
+			 break;
+		 case ASM_READ_UV1_CURRENT:
+			 asm_UVC_Current[6] = adc2_read(ASM_UVC_MUX1_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_7);
+			 break;
+		 case ASM_READ_UV2_CURRENT:
+			 asm_UVC_Current[5] = adc2_read(ASM_UVC_MUX1_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_4);
+			 break;
+		 case ASM_READ_UV3_CURRENT:
+			 asm_UVC_Current[8] = adc2_read(ASM_UVC_MUX2_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_6);
+			 break;
+		 case ASM_READ_UV4_CURRENT:
+			 asm_UVC_Current[7] = adc2_read(ASM_UVC_MUX1_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_1);
+			 break;
+		 case ASM_READ_UV5_CURRENT:
+			 asm_UVC_Current[9] = adc2_read(ASM_UVC_MUX2_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_2);
+			 break;
+		 case ASM_READ_UV6_CURRENT:
+			 asm_UVC_Current[10] = adc2_read(ASM_UVC_MUX2_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_3);
+			 break;
+		 case ASM_READ_UV7_CURRENT:
+			 asm_UVC_Current[3] = adc2_read(ASM_UVC_MUX1_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_2);
+			 break;
+		 case ASM_READ_UV8_CURRENT:
+			 asm_UVC_Current[2] = adc2_read(ASM_UVC_MUX1_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_1);
+			 break;
+		 case ASM_READ_UV9_CURRENT:
+			 asm_UVC_Current[1] = adc2_read(ASM_UVC_MUX1_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_4);
+			 break;
+		 case ASM_READ_UV10_CURRENT:
+			 asm_UVC_Current[0] = adc2_read(ASM_UVC_MUX1_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_8);
+			 break;
+		 case ASM_READ_UV11_CURRENT:
+			 asm_UVC_Current[14] = adc2_read(ASM_UVC_MUX2_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_7);
+			 break;
+		 case ASM_READ_UV12_CURRENT:
+			 asm_UVC_Current[13] = adc2_read(ASM_UVC_MUX2_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_5);
+			 break;
+		 case ASM_READ_UV13_CURRENT:
+			 asm_UVC_Current[12] = adc2_read(ASM_UVC_MUX2_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_3);
+			 break;
+		 case ASM_READ_UV14_CURRENT:
+			 asm_UVC_Current[11] = adc2_read(ASM_UVC_MUX2_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_5);
+			 break;
+		 case ASM_READ_UV15_CURRENT:
+			 asm_UVC_Current[4] = adc2_read(ASM_UVC_MUX1_CHANNEL, ADC_ATTEN_0DB);
+			 ASMC_SelectMUX(UV_MUX_CH_6);
+			 break;
+		 case ASM_READ_UV16_CURRENT:
+			 asm_UVC_Current[15] = adc2_read(ASM_UVC_MUX2_CHANNEL, ADC_ATTEN_0DB);
+			 break;
+		default:
+			AsM_ControlState = ASM_READ_CLEAN_TIME_KNOB;
+			break;
+
+	 }
+
+	 AsM_ControlState++;
+	 if(AsM_ControlState >= ASM_MAX_STATES)
+	 {
+		 AsM_ControlState=0;
+		 //ESP_LOGI(TAG,"Door Time:%x \t Clean Time:%x", asm_DoorTime, asm_CleanTime);
+		 //ESP_LOGI(TAG,"UV1:%x \t UV2:%x \t UV3:%x \t UV4:%x ",asm_UVC_Current[0], asm_UVC_Current[1], asm_UVC_Current[2],asm_UVC_Current[4]);
+		 //ESP_LOGI(TAG,"UV5:%x \t UV6:%x \t UV7:%x \t UV8:%x ",asm_UVC_Current[4], asm_UVC_Current[5], asm_UVC_Current[6],asm_UVC_Current[7]);
+		 //ESP_LOGI(TAG,"UV9:%x \t UV10:%x \t UV11:%x \t UV12:%x ",asm_UVC_Current[8], asm_UVC_Current[9], asm_UVC_Current[10],asm_UVC_Current[11]);
+		 //ESP_LOGI(TAG,"UV13:%x \t UV14:%x \t UV15:%x \t UV16:%x ",asm_UVC_Current[12], asm_UVC_Current[13], asm_UVC_Current[14],asm_UVC_Current[15]);
+	 }
+ }
+
+ void AsM_1sTasks(void)
+ {
+	 ESP_LOGI(TAG,"TEMPERATURE: %d HYST: %d TEMP_TEMP: %d",  (int)asm_finalValue, (int)asm_temp_hyst, (int)asm_finalValue);
+//	 ESP_LOGI(TAG,"UV ERROR 2: %d", asm_UVC_Current[1]);
+//	 ESP_LOGI(TAG,"UV ERROR 3: %d", asm_UVC_Current[2]);
+//	 ESP_LOGI(TAG,"UV ERROR 4: %d", asm_UVC_Current[3]);
+//	 ESP_LOGI(TAG,"UV ERROR 5: %d", asm_UVC_Current[4]);
+//	 ESP_LOGI(TAG,"UV ERROR 6: %d", asm_UVC_Current[5]);
+//	 ESP_LOGI(TAG,"UV ERROR 7: %d", asm_UVC_Current[6]);
+//	 ESP_LOGI(TAG,"UV ERROR 8: %d", asm_UVC_Current[7]);
+//	 ESP_LOGI(TAG,"UV ERROR 9: %d", asm_UVC_Current[8]);
+//	 ESP_LOGI(TAG,"UV ERROR 10: %d", asm_UVC_Current[9]);
+//	 ESP_LOGI(TAG,"UV ERROR 11: %d", asm_UVC_Current[10]);
+//	 ESP_LOGI(TAG,"UV ERROR 12: %d", asm_UVC_Current[11]);
+//	 ESP_LOGI(TAG,"UV ERROR 13: %d", asm_UVC_Current[12]);
+//	 ESP_LOGI(TAG,"UV ERROR 14: %d", asm_UVC_Current[13]);
+//	 ESP_LOGI(TAG,"UV ERROR 15: %d", asm_UVC_Current[14]);
+//	 ESP_LOGI(TAG,"UV ERROR 16: %d", asm_UVC_Current[15]);
+ }
+
+ uint16 getTempState(void)
+ {
+
+	 if(asm_finalValue < TEMP_LOW_VAL)
+	 {
+		 asm_temp_hyst = 1;
+	 }
+
+	 if(asm_temp_hyst)
+	 {
+		 if(asm_finalValue > TEMP_HIGH_VAL)
+		 {
+			 asm_temp_hyst = 0;
+		 }
+
+	 }
+	 return asm_temp_hyst;
+ }
+
+
+
+ //_____ L O C A L  F U N C T I O N S ________________________________________
+ // local interface functions

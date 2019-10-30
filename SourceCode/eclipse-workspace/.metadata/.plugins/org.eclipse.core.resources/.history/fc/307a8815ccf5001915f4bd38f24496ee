@@ -1,0 +1,23 @@
+/*
+ * bmi_app.h
+ *
+ *  Created on: Oct 23, 2019
+ *      Author: Zap
+ */
+
+#ifndef MAIN_BMI_APP_H_
+#define MAIN_BMI_APP_H_
+
+#include <stdio.h>
+#include "bmi2.h"
+#include "bmi270.h"
+
+void delay_us(uint32_t period);
+int8_t i2c_reg_write(uint8_t i2c_addr, uint8_t reg_addr, const uint8_t *reg_data, uint16_t length);
+int8_t i2c_reg_read(uint8_t i2c_addr, uint8_t reg_addr, uint8_t *reg_data, uint16_t length);
+int8_t spi_reg_write(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t length);
+int8_t spi_reg_read(uint8_t cs, uint8_t reg_addr, uint8_t *reg_data, uint16_t length);
+void print_rslt(int8_t rslt);
+
+void bmiAccGyroInit(void);
+#endif /* MAIN_BMI_APP_H_ */

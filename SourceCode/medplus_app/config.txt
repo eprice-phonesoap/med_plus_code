@@ -1,0 +1,3 @@
+FILE=/phonesoap/firmware/medp_firmware_v0.1_ota_1.bin
+VERSION=1
+INTERVAL=3600

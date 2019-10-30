@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+environment/project/0.980239369/BATCH_BUILD/delimiter=\:
+environment/project/0.980239369/BATCH_BUILD/operation=append
+environment/project/0.980239369/BATCH_BUILD/value=1
+environment/project/0.980239369/IDF_PATH/delimiter=\:
+environment/project/0.980239369/IDF_PATH/operation=replace
+environment/project/0.980239369/IDF_PATH/value=/home/vaishu/workspace/Med+/SourceCode/esp-idf123456
+environment/project/0.980239369/PATH/delimiter=\:
+environment/project/0.980239369/PATH/operation=replace
+environment/project/0.980239369/PATH/value=/home/vaishu/gcc-arm-none-eabi-5_4-2016q2/bin\:/home/vaishu/gcc-arm-none-eabi-5_4-2016q2/bin\:/home/vaishu/gcc-arm-none-eabi-5_4-2016q2/bin\:/home/vaishu/ninja\:/home/vaishu/bin\:/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/usr/games\:/usr/local/games\:/snap/bin\:/usr/lib/jvm/java-8-oracle/bin\:/usr/lib/jvm/java-8-oracle/db/bin\:/usr/lib/jvm/java-8-oracle/jre/bin\:/home/vaishu/workspace/Med+/SourceCode/toolchain/xtensa-esp32-elf/bin
+environment/project/0.980239369/append=true
+environment/project/0.980239369/appendContributed=true

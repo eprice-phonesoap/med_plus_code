@@ -1,0 +1,123 @@
+#include "freertos/FreeRTOS.h"
+#include "esp_wifi.h"
+#include "esp_system.h"
+#include "esp_event.h"
+#include "esp_event_loop.h"
+#include "nvs_flash.h"
+#include "driver/gpio.h"
+#include "esp_log.h"
+
+#include "AnalogSensorManagement.h"
+#include "LedControl.h"
+#include "LampControl.h"
+#include "I2C_Driver.h"
+#include "IOExtenderControl.h"
+#include "MotorControl.h"
+#include "UVCleaningApp.h"
+#include "ProximitySense.h"
+#include "OledDisplayDriver.h"
+#include "OledDisplayManager.h"
+#include "BluetoothDataManagement.h"
+#include "WiFiDataManagement.h"
+#include "NvDataManagement.h"
+#include "OTAManagement.h"
+#include "BeepControl.h"
+#include "bmi_app.h"
+
+#define TAG "MAIN"
+#define TASK_DELAY_CTR_START_POINT 0
+#define TIMER_CTR_COMPARE(var,delayCtr)  (var==delayCtr)
+
+/**
+  @brief            service_task
+  @details          This is the main task which acts as scheduler.
+  	  	  	  	  	Co-ordinates with all   other tasks
+  @param[in]        pvParameter - Used for freeRTOS to communicate with task
+  @param[out]       None
+  @param[in,out]    None
+  @retval  type     None
+*/
+void service_task(void *pvParameter)
+{
+	static uint8_t delayctr10msec=TASK_DELAY_CTR_START_POINT,delayctrfast=TASK_DELAY_CTR_START_POINT;
+	static uint16_t delay1sfast = TASK_DELAY_CTR_START_POINT;
+
+	I2C_Init();
+	AsM_Init();
+	LedCtrl_Init();
+	LampCtrl_Init();
+	IOEC_Init();
+	ProximitySense_Init();
+	MotorCtrl_Init();
+	OLD_Init();
+	OLM_Init();
+	UvC_Init();
+	BeepControl_Init();
+
+	bmiAccGyroInit();
+
+	while(1)
+	{
+		if(TIMER_CTR_COMPARE(delayctr10msec,10))
+		{
+			BtDm_10msTask();
+			OTA_10msTask();
+			NvDM_10msTask();
+
+			LedCtrl_10msTask();
+			MotorCtrl_10msTask();
+			LampCtrl_10msTask();
+			AsM_10msTask();
+			UvC_10msTask();
+			OLM_10ms_Tasks();
+			BeepControl_10msTask();
+
+			delayctr10msec = TASK_DELAY_CTR_START_POINT;
+			LampCtrl_TurnON();
+		}
+
+		if(TIMER_CTR_COMPARE(delayctrfast,1))
+		{
+			MotorCtrl_FastModeTask();
+			ProximitySense_1msTasks();
+			delayctrfast = TASK_DELAY_CTR_START_POINT;
+		}
+
+		if(TIMER_CTR_COMPARE(delay1sfast,1000))
+		{
+			ESP_LOGI(TAG, "---------- 1 Second tasks ----------");
+			AsM_1sTasks();
+			delay1sfast = TASK_DELAY_CTR_START_POINT;
+		}
+
+		vTaskDelay(pdMS_TO_TICKS(1));
+		delayctr10msec++;
+		delayctrfast++;
+		delay1sfast++;
+	}
+}
+
+void app_main(void)
+{
+	ESP_LOGI(TAG, "---------- Intialization started ----------");
+
+	nvs_flash_init();
+	NvDM_Init();
+
+	WifiDm_Init();
+	OTA_Init();
+	BtDm_Init();
+
+
+	xTaskCreate(&service_task, "ServicesTask", 8192, NULL, 5, NULL);
+}
+
+
+void Main_GetSoftwareVersion(uint8_t * sw_version)
+{
+	sw_version[0] = SW_VERSION_MAJOR;
+	sw_version[1] = SW_VERSION_MINOR;
+
+	ESP_LOGI(TAG, "---------- Firmware version: %d.%d -----------", sw_version[0],sw_version[1] );
+}
+

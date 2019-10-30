@@ -1,0 +1,375 @@
+16:06:20 **** Incremental Build of configuration Default for project medplus_app ****
+make -j4 all 
+including /home/Zap/esp/esp-idf/components/app_update/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/bootloader/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/bootloader_support/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/coap/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/efuse/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/esp32/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/esptool_py/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/mbedtls/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/nghttp/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/partition_table/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/ulp/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/unity/Makefile.projbuild...
+Toolchain path: /opt/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
+Toolchain version: crosstool-ng-1.22.0-80-g6c4433a5
+Compiler version: 5.2.0
+PROJECT_PATH= COMPONENT_DIRS= /usr/bin/make -C /home/Zap/esp/esp-idf/components/bootloader/subproject V=1 BUILD_DIR_BASE=/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader TEST_COMPONENTS= TESTS_ALL= EXCLUDE_COMPONENTS= /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/bootloader.bin
+python /home/Zap/esp/esp-idf/tools/check_python_dependencies.py
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/app_trace -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/app_trace/component.mk COMPONENT_NAME=app_trace build
+make[1]: Entering directory '/home/Zap/esp/esp-idf/components/bootloader/subproject'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/app_update -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/app_update/component.mk COMPONENT_NAME=app_update build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/app_trace'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/app_trace'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/app_update'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/asio -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/asio/component.mk COMPONENT_NAME=asio build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/asio'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/asio'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/aws_iot -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/aws_iot/component.mk COMPONENT_NAME=aws_iot build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/aws_iot'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/aws_iot'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader_support -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/bootloader_support/component.mk COMPONENT_NAME=bootloader_support build
+Project is not inside a git repository, will not use 'git describe' to determine PROJECT_VER.
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader_support'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader_support'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/bt -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/bt/component.mk COMPONENT_NAME=bt build
+App "app-template" version: 1
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/app_update'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/coap -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/coap/component.mk COMPONENT_NAME=coap build
+Python requirements from C:/msys32/home/Zap/esp/esp-idf\requirements.txt are satisfied.
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/console -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/console/component.mk COMPONENT_NAME=console build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/coap'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/coap'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/console'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/console'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/cxx -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/cxx/component.mk COMPONENT_NAME=cxx build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/driver -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/driver/component.mk COMPONENT_NAME=driver build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bt'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bt'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/efuse -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/efuse/component.mk COMPONENT_NAME=efuse build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/cxx'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/cxx'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/esp-tls -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/esp-tls/component.mk COMPONENT_NAME=esp-tls build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/efuse'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/efuse'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/driver'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/driver'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/esp32 -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/esp32/component.mk COMPONENT_NAME=esp32 build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/esp_adc_cal -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/esp_adc_cal/component.mk COMPONENT_NAME=esp_adc_cal build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp-tls'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp-tls'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/esp_event -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/esp_event/component.mk COMPONENT_NAME=esp_event build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_adc_cal'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_adc_cal'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_client -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/esp_http_client/component.mk COMPONENT_NAME=esp_http_client build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_event'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_event'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp32'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp32'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_server -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/esp_http_server/component.mk COMPONENT_NAME=esp_http_server build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_ota -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/esp_https_ota/component.mk COMPONENT_NAME=esp_https_ota build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_client'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_client'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_server -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/esp_https_server/component.mk COMPONENT_NAME=esp_https_server build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_ota'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_ota'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_server'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_server'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/esp_ringbuf -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/esp_ringbuf/component.mk COMPONENT_NAME=esp_ringbuf build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/espcoredump -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/espcoredump/component.mk COMPONENT_NAME=espcoredump build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_server'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_server'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_ringbuf'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_ringbuf'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/ethernet -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/ethernet/component.mk COMPONENT_NAME=ethernet build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/espcoredump'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/espcoredump'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/expat -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/expat/component.mk COMPONENT_NAME=expat build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/fatfs -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/fatfs/component.mk COMPONENT_NAME=fatfs build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/ethernet'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/ethernet'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/expat'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/expat'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/freemodbus -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/freemodbus/component.mk COMPONENT_NAME=freemodbus build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/freertos -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/freertos/component.mk COMPONENT_NAME=freertos build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/fatfs'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/fatfs'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/freemodbus'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/freemodbus'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/heap -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/heap/component.mk COMPONENT_NAME=heap build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/idf_test -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/idf_test/component.mk COMPONENT_NAME=idf_test build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/freertos'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/freertos'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/jsmn -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/jsmn/component.mk COMPONENT_NAME=jsmn build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/idf_test'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/idf_test'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/heap'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/heap'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/json -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/json/component.mk COMPONENT_NAME=json build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/jsmn'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/jsmn'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/libsodium -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/libsodium/component.mk COMPONENT_NAME=libsodium build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/log -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/log/component.mk COMPONENT_NAME=log build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/json'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/json'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/lwip -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/lwip/component.mk COMPONENT_NAME=lwip build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/log'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/log'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/main -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/med/SourceCode/medplus_app/main/component.mk COMPONENT_NAME=main build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/main'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/libsodium'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/libsodium'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/lwip'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/lwip'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/mbedtls -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/mbedtls/component.mk COMPONENT_NAME=mbedtls build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/mdns -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/mdns/component.mk COMPONENT_NAME=mdns build
+xtensa-esp32-elf-gcc -std=gnu99 -Os -ggdb -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -mlongcalls -nostdlib -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-old-style-declaration -DESP_PLATFORM -D IDF_VER=\"v3.3\" -MMD -MP   -DGCC_NOT_5_2_0=0 -DWITH_POSIX -DMBEDTLS_CONFIG_FILE='"mbedtls/esp_config.h"' -DHAVE_CONFIG_H -DUNITY_INCLUDE_CONFIG_H -I /home/Zap/esp/med/SourceCode/medplus_app/main/include -I /home/Zap/esp/esp-idf/components/app_trace/include -I /home/Zap/esp/esp-idf/components/app_update/include -I /home/Zap/esp/esp-idf/components/asio/asio/asio/include -I /home/Zap/esp/esp-idf/components/asio/port/include -I /home/Zap/esp/esp-idf/components/bootloader_support/include -I /home/Zap/esp/esp-idf/components/bt/include -I /home/Zap/esp/esp-idf/components/bt/bluedroid/api/include/api -I /home/Zap/esp/esp-idf/components/coap/port/include -I /home/Zap/esp/esp-idf/components/coap/port/include/coap -I /home/Zap/esp/esp-idf/components/coap/libcoap/include -I /home/Zap/esp/esp-idf/components/coap/libcoap/include/coap -I /home/Zap/esp/esp-idf/components/console -I /home/Zap/esp/esp-idf/components/driver/include -I /home/Zap/esp/esp-idf/components/efuse/esp32/include -I /home/Zap/esp/esp-idf/components/efuse/include -I /home/Zap/esp/esp-idf/components/esp-tls -I /home/Zap/esp/esp-idf/components/esp32/include -I /home/Zap/esp/esp-idf/components/esp_adc_cal/include -I /home/Zap/esp/esp-idf/components/esp_event/include -I /home/Zap/esp/esp-idf/components/esp_http_client/include -I /home/Zap/esp/esp-idf/components/esp_http_server/include -I /home/Zap/esp/esp-idf/components/esp_https_ota/include -I /home/Zap/esp/esp-idf/components/esp_https_server/include -I /home/Zap/esp/esp-idf/components/esp_ringbuf/include -I /home/Zap/esp/esp-idf/components/espcoredump/include -I /home/Zap/esp/esp-idf/components/ethernet/include -I /home/Zap/esp/esp-idf/components/expat/expat/expat/lib -I /home/Zap/esp/esp-idf/components/expat/port/include -I /home/Zap/esp/esp-idf/components/fatfs/src -I /home/Zap/esp/esp-idf/components/freemodbus/modbus/include -I /home/Zap/esp/esp-idf/components/freemodbus/modbus_controller -I /home/Zap/esp/esp-idf/components/freertos/include -I /home/Zap/esp/esp-idf/components/heap/include -I /home/Zap/esp/esp-idf/components/idf_test/include -I /home/Zap/esp/esp-idf/components/jsmn/include -I /home/Zap/esp/esp-idf/components/json/cJSON -I /home/Zap/esp/esp-idf/components/libsodium/libsodium/src/libsodium/include -I /home/Zap/esp/esp-idf/components/libsodium/port_include -I /home/Zap/esp/esp-idf/components/log/include -I /home/Zap/esp/esp-idf/components/lwip/include/apps -I /home/Zap/esp/esp-idf/components/lwip/lwip/src/include -I /home/Zap/esp/esp-idf/components/lwip/port/esp32/include -I /home/Zap/esp/esp-idf/components/lwip/port/esp32/include/arch -I /home/Zap/esp/esp-idf/components/lwip/include_compat -I /home/Zap/esp/esp-idf/components/mbedtls/port/include -I /home/Zap/esp/esp-idf/components/mbedtls/mbedtls/include -I /home/Zap/esp/esp-idf/components/mdns/include -I /home/Zap/esp/esp-idf/components/micro-ecc/micro-ecc -I /home/Zap/esp/esp-idf/components/mqtt/esp-mqtt/include -I /home/Zap/esp/esp-idf/components/newlib/platform_include -I /home/Zap/esp/esp-idf/components/newlib/include -I /home/Zap/esp/esp-idf/components/nghttp/port/include -I /home/Zap/esp/esp-idf/components/nghttp/nghttp2/lib/includes -I /home/Zap/esp/esp-idf/components/nvs_flash/include -I /home/Zap/esp/esp-idf/components/openssl/include -I /home/Zap/esp/esp-idf/components/protobuf-c/protobuf-c -I /home/Zap/esp/esp-idf/components/protocomm/include/common -I /home/Zap/esp/esp-idf/components/protocomm/include/security -I /home/Zap/esp/esp-idf/components/protocomm/include/transports -I /home/Zap/esp/esp-idf/components/pthread/include -I /home/Zap/esp/esp-idf/components/sdmmc/include -I /home/Zap/esp/esp-idf/components/smartconfig_ack/include -I /home/Zap/esp/esp-idf/components/soc/esp32/include -I /home/Zap/esp/esp-idf/components/soc/include -I /home/Zap/esp/esp-idf/components/spi_flash/include -I /home/Zap/esp/esp-idf/components/spiffs/include -I /home/Zap/esp/esp-idf/components/tcp_transport/include -I /home/Zap/esp/esp-idf/components/tcpip_adapter/include -I /home/Zap/esp/esp-idf/components/ulp/include -I /home/Zap/esp/esp-idf/components/unity/include -I /home/Zap/esp/esp-idf/components/unity/unity/src -I /home/Zap/esp/esp-idf/components/vfs/include -I /home/Zap/esp/esp-idf/components/wear_levelling/include -I /home/Zap/esp/esp-idf/components/wifi_provisioning/include -I /home/Zap/esp/esp-idf/components/wpa_supplicant/include -I /home/Zap/esp/esp-idf/components/wpa_supplicant/port/include -I /home/Zap/esp/esp-idf/components/xtensa-debug-module/include -I /home/Zap/esp/med/SourceCode/medplus_app/build/include  -I . -c /home/Zap/esp/med/SourceCode/medplus_app/main/AnalogSensorManagement.c -o AnalogSensorManagement.o
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/mdns'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/mdns'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/micro-ecc -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/micro-ecc/component.mk COMPONENT_NAME=micro-ecc build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/mbedtls'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/mbedtls'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/mqtt -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/mqtt/component.mk COMPONENT_NAME=mqtt build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/micro-ecc'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/micro-ecc'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/newlib -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/newlib/component.mk COMPONENT_NAME=newlib build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/mqtt'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/mqtt'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/nghttp -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/nghttp/component.mk COMPONENT_NAME=nghttp build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/newlib'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/newlib'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/nvs_flash -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/nvs_flash/component.mk COMPONENT_NAME=nvs_flash build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/nghttp'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/nghttp'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/openssl -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/openssl/component.mk COMPONENT_NAME=openssl build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/nvs_flash'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/nvs_flash'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/protobuf-c -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/protobuf-c/component.mk COMPONENT_NAME=protobuf-c build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/openssl'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/openssl'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/protocomm -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/protocomm/component.mk COMPONENT_NAME=protocomm build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/protobuf-c'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/protobuf-c'
+echo "/home/Zap/esp/med/SourceCode/medplus_app/main/./AnalogSensorManagement.c:" >> AnalogSensorManagement.d
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/pthread -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/pthread/component.mk COMPONENT_NAME=pthread build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/pthread'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/pthread'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/protocomm'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/protocomm'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/sdmmc -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/sdmmc/component.mk COMPONENT_NAME=sdmmc build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/smartconfig_ack -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/smartconfig_ack/component.mk COMPONENT_NAME=smartconfig_ack build
+rm -f libmain.a
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/sdmmc'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/sdmmc'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/soc -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/soc/component.mk COMPONENT_NAME=soc build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/smartconfig_ack'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/smartconfig_ack'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/spi_flash -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/spi_flash/component.mk COMPONENT_NAME=spi_flash build
+xtensa-esp32-elf-ar cru libmain.a ./iap.o ./LampControl.o ./BluetoothDataManagement.o ./AnalogSensorMultiplexerControl.o ./I2C_Driver.o ./OledDisplayDriver.o ./main.o ./iap_https.o ./UVCleaningApp.o ./bmi2_ois.o ./bmi270.o ./OTAManagement.o ./BeepControl.o ./AnalogSensorManagement.o ./NvDataManagement.o ./ProximitySense.o ./OledDisplayManager.o ./bmi_app.o ./wifi_tls.o ./IOExtenderControl.o ./LedControl.o ./bmi2.o ./WiFiDataManagement.o ./MotorControl.o ./https_client.o   
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/spi_flash'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/spi_flash'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/soc'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/soc'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/spiffs -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/spiffs/component.mk COMPONENT_NAME=spiffs build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/tcp_transport -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/tcp_transport/component.mk COMPONENT_NAME=tcp_transport build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/spiffs'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/spiffs'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/tcpip_adapter -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/tcpip_adapter/component.mk COMPONENT_NAME=tcpip_adapter build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/tcp_transport'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/tcp_transport'
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/main'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/ulp -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/ulp/component.mk COMPONENT_NAME=ulp build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/unity -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/unity/component.mk COMPONENT_NAME=unity build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/tcpip_adapter'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/tcpip_adapter'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/ulp'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/ulp'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/vfs -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/vfs/component.mk COMPONENT_NAME=vfs build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/wear_levelling -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/wear_levelling/component.mk COMPONENT_NAME=wear_levelling build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/unity'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/unity'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/wifi_provisioning -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/wifi_provisioning/component.mk COMPONENT_NAME=wifi_provisioning build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/vfs'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/vfs'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/wear_levelling'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/wear_levelling'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/wpa_supplicant -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/wpa_supplicant/component.mk COMPONENT_NAME=wpa_supplicant build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/xtensa-debug-module -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/xtensa-debug-module/component.mk COMPONENT_NAME=xtensa-debug-module build
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/wifi_provisioning'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/wifi_provisioning'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/xtensa-debug-module'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/xtensa-debug-module'
+make[1]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/wpa_supplicant'
+make[1]: Nothing to be done for 'build'.
+make[1]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/wpa_supplicant'
+
+Target 'component-app_trace-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/app_trace/libapp_trace.a'
+Target 'component-app_update-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/app_update/libapp_update.a'
+Target 'component-asio-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/asio/libasio.a'
+Target 'component-aws_iot-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/aws_iot/libaws_iot.a'
+Target 'component-bootloader_support-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader_support/libbootloader_support.a'
+Target 'component-bt-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/bt/libbt.a'
+Target 'component-coap-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/coap/libcoap.a'
+Target 'component-console-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/console/libconsole.a'
+Target 'component-cxx-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/cxx/libcxx.a'
+Target 'component-driver-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/driver/libdriver.a'
+Target 'component-efuse-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/efuse/libefuse.a'
+Target 'component-esp-tls-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/esp-tls/libesp-tls.a'
+Target 'component-esp32-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/esp32/libesp32.a'
+Target 'component-esp_adc_cal-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_adc_cal/libesp_adc_cal.a'
+Target 'component-esp_event-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_event/libesp_event.a'
+Target 'component-esp_http_client-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_client/libesp_http_client.a'
+Target 'component-esp_http_server-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_server/libesp_http_server.a'
+Target 'component-esp_https_ota-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_ota/libesp_https_ota.a'
+Target 'component-esp_https_server-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_server/libesp_https_server.a'
+Target 'component-esp_ringbuf-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/esp_ringbuf/libesp_ringbuf.a'
+Target 'component-espcoredump-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/espcoredump/libespcoredump.a'
+Target 'component-ethernet-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/ethernet/libethernet.a'
+Target 'component-expat-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/expat/libexpat.a'
+Target 'component-fatfs-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/fatfs/libfatfs.a'
+Target 'component-freemodbus-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/freemodbus/libfreemodbus.a'
+Target 'component-freertos-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/freertos/libfreertos.a'
+Target 'component-heap-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/heap/libheap.a'
+Target 'component-idf_test-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/idf_test/libidf_test.a'
+Target 'component-jsmn-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/jsmn/libjsmn.a'
+Target 'component-json-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/json/libjson.a'
+Target 'component-libsodium-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/libsodium/liblibsodium.a'
+Target 'component-log-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/log/liblog.a'
+Target 'component-lwip-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/lwip/liblwip.a'
+Target 'component-main-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/main/libmain.a'
+Target 'component-mbedtls-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/mbedtls/libmbedtls.a'
+Target 'component-mdns-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/mdns/libmdns.a'
+Target 'component-micro-ecc-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/micro-ecc/libmicro-ecc.a'
+Target 'component-mqtt-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/mqtt/libmqtt.a'
+Target 'component-newlib-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/newlib/libnewlib.a'
+Target 'component-nghttp-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/nghttp/libnghttp.a'
+Target 'component-openssl-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/openssl/libopenssl.a'
+Target 'component-nvs_flash-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/nvs_flash/libnvs_flash.a'
+Target 'component-protobuf-c-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/protobuf-c/libprotobuf-c.a'
+Target 'component-protocomm-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/protocomm/libprotocomm.a'
+including /home/Zap/esp/esp-idf/components/esptool_py/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/bootloader_support/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/bootloader/subproject/main/Makefile.projbuild...
+including /home/Zap/esp/esp-idf/components/efuse/Makefile.projbuild...
+Target 'component-pthread-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/pthread/libpthread.a'
+Target 'component-sdmmc-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/sdmmc/libsdmmc.a'
+Target 'component-soc-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/soc/libsoc.a'
+Target 'component-smartconfig_ack-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/smartconfig_ack/libsmartconfig_ack.a'
+Target 'component-spi_flash-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/spi_flash/libspi_flash.a'
+Target 'component-tcp_transport-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/tcp_transport/libtcp_transport.a'
+Target 'component-spiffs-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/spiffs/libspiffs.a'
+Target 'component-tcpip_adapter-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/tcpip_adapter/libtcpip_adapter.a'
+Target 'component-ulp-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/ulp/libulp.a'
+Target 'component-unity-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/unity/libunity.a'
+Target 'component-vfs-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/vfs/libvfs.a'
+Target 'component-wear_levelling-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/wear_levelling/libwear_levelling.a'
+Target 'component-wifi_provisioning-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/wifi_provisioning/libwifi_provisioning.a'
+Target 'component-wpa_supplicant-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/wpa_supplicant/libwpa_supplicant.a'
+Target 'component-xtensa-debug-module-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/xtensa-debug-module/libxtensa-debug-module.a'
+Generating libmain.a.sections_info
+xtensa-esp32-elf-objdump -h  /home/Zap/esp/med/SourceCode/medplus_app/build/main/libmain.a >  /home/Zap/esp/med/SourceCode/medplus_app/build/main/libmain.a.sections_info
+printf "C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/app_trace/libapp_trace.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/app_update/libapp_update.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/asio/libasio.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/aws_iot/libaws_iot.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader_support/libbootloader_support.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/bt/libbt.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/coap/libcoap.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/console/libconsole.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/cxx/libcxx.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/driver/libdriver.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/efuse/libefuse.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/esp-tls/libesp-tls.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/esp32/libesp32.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/esp_adc_cal/libesp_adc_cal.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/esp_event/libesp_event.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_client/libesp_http_client.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_server/libesp_http_server.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_ota/libesp_https_ota.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_server/libesp_https_server.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/esp_ringbuf/libesp_ringbuf.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/espcoredump/libespcoredump.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/ethernet/libethernet.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/expat/libexpat.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/fatfs/libfatfs.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/freemodbus/libfreemodbus.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/freertos/libfreertos.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/heap/libheap.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/idf_test/libidf_test.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/jsmn/libjsmn.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/json/libjson.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/libsodium/liblibsodium.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/log/liblog.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/lwip/liblwip.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/main/libmain.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/mbedtls/libmbedtls.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/mdns/libmdns.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/micro-ecc/libmicro-ecc.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/mqtt/libmqtt.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/newlib/libnewlib.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/nghttp/libnghttp.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/nvs_flash/libnvs_flash.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/openssl/libopenssl.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/protobuf-c/libprotobuf-c.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/protocomm/libprotocomm.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/pthread/libpthread.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/sdmmc/libsdmmc.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/smartconfig_ack/libsmartconfig_ack.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/soc/libsoc.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/spi_flash/libspi_flash.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/spiffs/libspiffs.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/tcp_transport/libtcp_transport.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/tcpip_adapter/libtcpip_adapter.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/ulp/libulp.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/unity/libunity.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/vfs/libvfs.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/wear_levelling/libwear_levelling.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/wifi_provisioning/libwifi_provisioning.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/wpa_supplicant/libwpa_supplicant.a.sections_info\n C:/msys32/home/Zap/esp/med/SourceCode/medplus_app/build/xtensa-debug-module/libxtensa-debug-module.a.sections_info\n" > /home/Zap/esp/med/SourceCode/medplus_app/build/ldgen.section_infos
+Generating esp32.project.ld
+python /home/Zap/esp/esp-idf/tools/ldgen/ldgen.py --input          /home/Zap/esp/esp-idf/components/esp32/ld/esp32.project.ld.in --config        /home/Zap/esp/med/SourceCode/medplus_app/sdkconfig --fragments      /home/Zap/esp/esp-idf/components/app_trace/linker.lf            /home/Zap/esp/esp-idf/components/esp32/ld/esp32_fragments.lf /home/Zap/esp/esp-idf/components/esp32/linker.lf       /home/Zap/esp/esp-idf/components/esp_ringbuf/linker.lf /home/Zap/esp/esp-idf/components/espcoredump/linker.lf     /home/Zap/esp/esp-idf/components/freertos/linker.lf /home/Zap/esp/esp-idf/components/heap/linker.lf      /home/Zap/esp/esp-idf/components/lwip/linker.lf               /home/Zap/esp/esp-idf/components/soc/linker.lf /home/Zap/esp/esp-idf/components/spi_flash/linker.lf          /home/Zap/esp/esp-idf/components/xtensa-debug-module/linker.lf --output         /home/Zap/esp/med/SourceCode/medplus_app/build/esp32/esp32.project.ld --sections      /home/Zap/esp/med/SourceCode/medplus_app/build/ldgen.section_infos --kconfig       /home/Zap/esp/esp-idf/Kconfig --env           "COMPONENT_KCONFIGS= C:\msys32\home\Zap\esp\esp-idf\components\app_trace\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\aws_iot\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\bt\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\driver\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\efuse\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\esp32\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\esp_adc_cal\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\esp_event\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\esp_http_client\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\esp_http_server\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\esp_https_ota\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\espcoredump\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\ethernet\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\fatfs\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\freemodbus\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\freertos\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\heap\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\libsodium\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\log\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\lwip\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\mbedtls\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\mdns\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\mqtt\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\nvs_flash\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\openssl\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\pthread\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\spi_flash\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\spiffs\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\tcpip_adapter\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\unity\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\vfs\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\wear_levelling\Kconfig  C:\msys32\home\Zap\esp\esp-idf\components\wifi_provisioning\Kconfig" --env           "COMPONENT_KCONFIGS_PROJBUILD= C:\msys32\home\Zap\esp\esp-idf\components\app_update\Kconfig.projbuild  C:\msys32\home\Zap\esp\esp-idf\components\bootloader\Kconfig.projbuild  C:\msys32\home\Zap\esp\esp-idf\components\esptool_py\Kconfig.projbuild  C:\msys32\home\Zap\esp\esp-idf\components\partition_table\Kconfig.projbuild" --env           "IDF_CMAKE=n"
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/bootloader_support -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/bootloader_support/component.mk COMPONENT_NAME=bootloader_support build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/log -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/log/component.mk COMPONENT_NAME=log build
+make[2]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/bootloader_support'
+make[2]: Nothing to be done for 'build'.
+make[2]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/bootloader_support'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/spi_flash -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/spi_flash/component.mk COMPONENT_NAME=spi_flash build
+make[2]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/log'
+make[2]: Nothing to be done for 'build'.
+make[2]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/log'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/micro-ecc -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/micro-ecc/component.mk COMPONENT_NAME=micro-ecc build
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/soc -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/soc/component.mk COMPONENT_NAME=soc build
+make[2]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/spi_flash'
+make[2]: Nothing to be done for 'build'.
+make[2]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/spi_flash'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/main -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/bootloader/subproject/main/component.mk COMPONENT_NAME=main build
+make[2]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/micro-ecc'
+make[2]: Nothing to be done for 'build'.
+make[2]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/micro-ecc'
+make[2]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/main'
+make[2]: Nothing to be done for 'build'.
+make[2]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/main'
+/usr/bin/make -C /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/efuse -f /home/Zap/esp/esp-idf/make/component_wrapper.mk COMPONENT_MAKEFILE=/home/Zap/esp/esp-idf/components/efuse/component.mk COMPONENT_NAME=efuse build
+make[2]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/soc'
+make[2]: Nothing to be done for 'build'.
+make[2]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/soc'
+make[2]: Entering directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/efuse'
+make[2]: Nothing to be done for 'build'.
+make[2]: Leaving directory '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/efuse'
+Target 'component-log-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/log/liblog.a'
+Target 'component-bootloader_support-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/bootloader_support/libbootloader_support.a'
+Target 'component-spi_flash-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/spi_flash/libspi_flash.a'
+Target 'component-micro-ecc-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/micro-ecc/libmicro-ecc.a'
+Target 'component-soc-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/soc/libsoc.a'
+xtensa-esp32-elf-gcc -nostdlib -u call_user_start_cpu0  -Wl,--gc-sections -Wl,-static -Wl,--start-group  -L/home/Zap/esp/med/SourceCode/medplus_app/build/app_trace -lapp_trace -L/home/Zap/esp/med/SourceCode/medplus_app/build/app_update -lapp_update -u esp_app_desc -L/home/Zap/esp/med/SourceCode/medplus_app/build/asio -lasio -L/home/Zap/esp/med/SourceCode/medplus_app/build/aws_iot  -L/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader_support -lbootloader_support -L/home/Zap/esp/med/SourceCode/medplus_app/build/bt -lbt -L /home/Zap/esp/esp-idf/components/bt/lib -lbtdm_app -L/home/Zap/esp/med/SourceCode/medplus_app/build/coap -lcoap -L/home/Zap/esp/med/SourceCode/medplus_app/build/console -lconsole -L/home/Zap/esp/med/SourceCode/medplus_app/build/cxx -lcxx -u __cxa_guard_dummy -u __cxx_fatal_exception -L/home/Zap/esp/med/SourceCode/medplus_app/build/driver -ldriver -L/home/Zap/esp/med/SourceCode/medplus_app/build/efuse -lefuse -L/home/Zap/esp/med/SourceCode/medplus_app/build/esp-tls -lesp-tls -L/home/Zap/esp/med/SourceCode/medplus_app/build/esp32 -lesp32 /home/Zap/esp/esp-idf/components/esp32/libhal.a -L/home/Zap/esp/esp-idf/components/esp32/lib -lcore -lrtc -lnet80211 -lpp -lwpa -lsmartconfig -lcoexist -lwps -lwpa2 -lespnow -lphy -lmesh -L /home/Zap/esp/esp-idf/components/esp32/ld -T esp32_out.ld -u ld_include_panic_highint_hdl -T /home/Zap/esp/med/SourceCode/medplus_app/build/esp32/esp32.project.ld -T esp32.rom.ld -T esp32.peripherals.ld -T esp32.rom.libgcc.ld -T esp32.rom.spiram_incompatible_fns.ld  -L/home/Zap/esp/med/SourceCode/medplus_app/build/esp_adc_cal -lesp_adc_cal -L/home/Zap/esp/med/SourceCode/medplus_app/build/esp_event -lesp_event -L/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_client -lesp_http_client -L/home/Zap/esp/med/SourceCode/medplus_app/build/esp_http_server -lesp_http_server -L/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_ota -lesp_https_ota -L/home/Zap/esp/med/SourceCode/medplus_app/build/esp_https_server -lesp_https_server -L/home/Zap/esp/med/SourceCode/medplus_app/build/esp_ringbuf -lesp_ringbuf -L/home/Zap/esp/med/SourceCode/medplus_app/build/espcoredump -lespcoredump -L/home/Zap/esp/med/SourceCode/medplus_app/build/ethernet -lethernet -L/home/Zap/esp/med/SourceCode/medplus_app/build/expat -lexpat -L/home/Zap/esp/med/SourceCode/medplus_app/build/fatfs -lfatfs -L/home/Zap/esp/med/SourceCode/medplus_app/build/freemodbus -lfreemodbus -L/home/Zap/esp/med/SourceCode/medplus_app/build/freertos -lfreertos -Wl,--undefined=uxTopUsedPriority -L/home/Zap/esp/med/SourceCode/medplus_app/build/heap -lheap -Wl,--wrap=calloc -Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=realloc -Wl,--wrap=heap_caps_malloc -Wl,--wrap=heap_caps_free -Wl,--wrap=heap_caps_realloc -Wl,--wrap=heap_caps_malloc_default -Wl,--wrap=heap_caps_realloc_default -L/home/Zap/esp/med/SourceCode/medplus_app/build/idf_test -lidf_test -L/home/Zap/esp/med/SourceCode/medplus_app/build/jsmn -ljsmn -L/home/Zap/esp/med/SourceCode/medplus_app/build/json -ljson -L/home/Zap/esp/med/SourceCode/medplus_app/build/libsodium -llibsodium -L/home/Zap/esp/med/SourceCode/medplus_app/build/log -llog -L/home/Zap/esp/med/SourceCode/medplus_app/build/lwip -llwip -L/home/Zap/esp/med/SourceCode/medplus_app/build/main -lmain -L/home/Zap/esp/med/SourceCode/medplus_app/build/mbedtls -lmbedtls -L/home/Zap/esp/med/SourceCode/medplus_app/build/mdns -lmdns -L/home/Zap/esp/med/SourceCode/medplus_app/build/micro-ecc -lmicro-ecc -L/home/Zap/esp/med/SourceCode/medplus_app/build/mqtt -lmqtt -L/home/Zap/esp/med/SourceCode/medplus_app/build/newlib /home/Zap/esp/esp-idf/components/newlib/lib/libc.a /home/Zap/esp/esp-idf/components/newlib/lib/libm.a -lnewlib -L/home/Zap/esp/med/SourceCode/medplus_app/build/nghttp -lnghttp -L/home/Zap/esp/med/SourceCode/medplus_app/build/nvs_flash -lnvs_flash -L/home/Zap/esp/med/SourceCode/medplus_app/build/openssl -lopenssl -L/home/Zap/esp/med/SourceCode/medplus_app/build/protobuf-c -lprotobuf-c -L/home/Zap/esp/med/SourceCode/medplus_app/build/protocomm -lprotocomm -L/home/Zap/esp/med/SourceCode/medplus_app/build/pthread -lpthread -L/home/Zap/esp/med/SourceCode/medplus_app/build/sdmmc -lsdmmc -L/home/Zap/esp/med/SourceCode/medplus_app/build/smartconfig_ack -lsmartconfig_ack -L/home/Zap/esp/med/SourceCode/medplus_app/build/soc -lsoc -L/home/Zap/esp/med/SourceCode/medplus_app/build/spi_flash -lspi_flash -L/home/Zap/esp/med/SourceCode/medplus_app/build/spiffs -lspiffs -L/home/Zap/esp/med/SourceCode/medplus_app/build/tcp_transport -ltcp_transport -L/home/Zap/esp/med/SourceCode/medplus_app/build/tcpip_adapter -ltcpip_adapter -L/home/Zap/esp/med/SourceCode/medplus_app/build/ulp -lulp -L/home/Zap/esp/med/SourceCode/medplus_app/build/unity -lunity -L/home/Zap/esp/med/SourceCode/medplus_app/build/vfs -lvfs -L/home/Zap/esp/med/SourceCode/medplus_app/build/wear_levelling -lwear_levelling -L/home/Zap/esp/med/SourceCode/medplus_app/build/wifi_provisioning -lwifi_provisioning -L/home/Zap/esp/med/SourceCode/medplus_app/build/wpa_supplicant -lwpa_supplicant -L/home/Zap/esp/med/SourceCode/medplus_app/build/xtensa-debug-module -lxtensa-debug-module -lgcc -lstdc++ -lgcov -Wl,--end-group -Wl,-EL -o /home/Zap/esp/med/SourceCode/medplus_app/build/app-template.elf -Wl,-Map=/home/Zap/esp/med/SourceCode/medplus_app/build/app-template.map
+Target 'component-main-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/main/libmain.a'
+Target 'component-efuse-build' responsible for '/home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/efuse/libefuse.a'
+make[1]: Leaving directory '/home/Zap/esp/esp-idf/components/bootloader/subproject'
+python /home/Zap/esp/esp-idf/components/esptool_py/esptool/esptool.py --chip esp32 elf2image --flash_mode "dio" --flash_freq "40m" --flash_size "4MB"  --elf-sha256-offset 0xb0 -o /home/Zap/esp/med/SourceCode/medplus_app/build/app-template.bin /home/Zap/esp/med/SourceCode/medplus_app/build/app-template.elf
+esptool.py v2.8-dev
+To flash all build output, run 'make flash' or:
+python /home/Zap/esp/esp-idf/components/esptool_py/esptool/esptool.py --chip esp32 --port COM5 --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x15000 /home/Zap/esp/med/SourceCode/medplus_app/build/ota_data_initial.bin 0x1000 /home/Zap/esp/med/SourceCode/medplus_app/build/bootloader/bootloader.bin 0x20000 /home/Zap/esp/med/SourceCode/medplus_app/build/app-template.bin 0x10000 /home/Zap/esp/med/SourceCode/medplus_app/build/partitions.bin
+
+16:06:39 Build Finished. 0 errors, 0 warnings. (took 19s.216ms)
+

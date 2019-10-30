@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/BATCH_BUILD/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/BATCH_BUILD/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/BATCH_BUILD/value=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/IDF_PATH/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/IDF_PATH/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/IDF_PATH/value=C\:\\msys32\\home\\Zap\\esp\\esp-idf
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/PATH/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/PATH/operation=replace
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/PATH/value=C\:\\msys32\\mingw32\\bin;C\:\\msys32\\opt\\xtensa-esp32-elf\\bin;C\:\\msys32\\usr\\bin;C\:/Program Files/Java/jre1.8.0_221/bin/server;C\:/Program Files/Java/jre1.8.0_221/bin;C\:/Program Files/Java/jre1.8.0_221/lib/amd64;C\:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C\:\\Program Files (x86)\\STMicroelectronics\\st_toolset\\asm;C\:\\Windows\\system32;C\:\\Windows;C\:\\Windows\\System32\\Wbem;C\:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C\:\\Windows\\System32\\OpenSSH\\;C\:\\Program Files\\NVIDIA Corporation\\NVIDIA NGX;C\:\\Program Files\\Git\\cmd;C\:\\Program Files\\TortoiseSVN\\bin;C\:\\Program Files (x86)\\Microchip\\xc32\\v2.20\\bin;C\:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C\:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C\:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI;C\:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C\:\\Users\\Zap\\AppData\\Local\\Programs\\Python\\Python37-32\\Scripts\\;C\:\\Users\\Zap\\AppData\\Local\\Programs\\Python\\Python37-32\\;C\:\\Users\\Zap\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\;C\:\\Users\\Zap\\AppData\\Local\\Programs\\Python\\Python37\\;C\:\\Users\\Zap\\AppData\\Local\\Microsoft\\WindowsApps;C\:\\Users\\Zap\\AppData\\Local\\GitHubDesktop\\bin;;C\:\\Users\\Zap\\Desktop
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/append=true
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.183640964/appendContributed=true
